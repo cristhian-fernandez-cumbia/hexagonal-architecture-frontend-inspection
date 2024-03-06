@@ -55,9 +55,29 @@ El proyecto sigue una estructura organizada que facilita la comprensión y mante
 - main.tsx
 ```
 
-## Ejecución del Proyecto
-Para ejecutar el proyecto localmente, siga estos pasos:
+## Pruebas Unitarias
 
-1. Ejecute `npm install` para instalar todas las dependencias necesarias.
-2. Ejecute `npm run dev` para iniciar el servidor de desarrollo.
-3. Abra su navegador y navegue a la URL proporcionada para ver la aplicación en funcionamiento.
+Las pruebas unitarias se encuentran en la carpeta `tests` del proyecto.
+
+### Pruebas para Módulos de Inspección
+
+Para ejecutar las pruebas para el dominio de las inspecciones, puedes utilizar el siguiente comando:
+`npx jest tests/modules/Inspections/domain/Inspection.spec.ts`
+
+
+### Pruebas para el Formulario de Inspección
+
+Las pruebas para el formulario de inspección se encuentran en la carpeta `tests/sections/inspection`. Para ejecutar estas pruebas, utiliza el siguiente comando:
+`npx jest tests/sections/inspection/InspectionForm.spec.tsx`
+
+## Ejecución del Proyecto
+
+Para ejecutar el proyecto, sigue estos pasos:
+
+1. Clona el repositorio.
+2. Abre una terminal en la raíz del proyecto.
+3. Ejecuta el comando `npm install` para instalar las dependencias.
+4. Luego, ejecuta el comando `npm run dev` para iniciar la aplicación.
+5. Abra su navegador y navegue a la URL proporcionada para ver la aplicación en funcionamiento.
+
+¡Espero disfrute del proyecto!!!

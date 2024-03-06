@@ -1,0 +1,41 @@
+.homeContainer {
+    position: relative;
+}
+
+.bannerImage {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    object-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.overlay h1 {
+    margin-bottom: 10px;
+}
+
+.overlay button {
+    background-color: #007bff;
+    color: var(--white-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.bottomSection {
+    padding: 50px 0;
+    text-align: center;
+}

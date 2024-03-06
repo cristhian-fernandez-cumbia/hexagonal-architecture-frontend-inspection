@@ -13,7 +13,8 @@ interface InspectionFormProps {
 export function InspectionForm({ inspection }: InspectionFormProps) {
     const { formStatus, submitCreateForm, submitUpdateForm} = useInspectionForm();
     const [errorMessage, setErrorMessage] = useState<string>('');
-    const buttonText = inspection ? 'Update inspection' : 'Create inspection';
+    const buttonText = inspection ? 'Actualizar Inspección' : 'Crear Inspección';
+    const titleText = inspection ? 'Actualizar Formulario de Inspección' : 'Crear Formulario de Inspección';
     const [formData, setFormData] = useState<Inspection>({
         id: uuidv4(),
         inspector: {
@@ -144,17 +145,17 @@ export function InspectionForm({ inspection }: InspectionFormProps) {
     };
 
     return (
-        <section id="inspection-form">
+        <section id="inspection-form" >
             {formStatus === FormStatus.Loading && <Spinner />}
             {formStatus === FormStatus.Success && <SuccessNotification result={formData.result} />}
             {formStatus === FormStatus.Error && <ErrorNotification />}
             {formStatus === FormStatus.Initial && (
-                <form onSubmit={handleSubmit}>
-                    <h2>🔍 Create new inspection</h2>
+                <form onSubmit={handleSubmit} className={styles.form}>
+                    <h2 className={styles.form__title}>{titleText}</h2>
                     <div>
-                        <h2>Colaborador</h2>
-                        <div>
-                            <label htmlFor="collaboratorDocumentType">Tipo Documento Identidad</label>
+                        <h2 className={styles.form__subtitle}>Colaborador</h2>
+                        <div className={styles.form_field}>
+                            <label htmlFor="collaboratorDocumentType">Tipo Documento</label>
                             <input
                                 id="collaboratorDocumentType"
                                 type="text"
@@ -162,8 +163,8 @@ export function InspectionForm({ inspection }: InspectionFormProps) {
                                 onChange={(e) => handleInputChange('collaborator.documentType', e.target.value)}
                             />
                         </div>
-                        <div>
-                            <label htmlFor="collaboratorDocumentNumber">Número Documento Identidad</label>
+                        <div className={styles.form_field}>
+                            <label htmlFor="collaboratorDocumentNumber">Número Documento</label>
                             <input
                                 id="collaboratorDocumentNumber"
                                 type="text"
@@ -171,7 +172,7 @@ export function InspectionForm({ inspection }: InspectionFormProps) {
                                 onChange={(e) => handleInputChange('collaborator.documentNumber', e.target.value)}
                             />
                         </div>
-                        <div>
+                        <div className={styles.form_field}>
                             <label htmlFor="collaboratorLastName">Apellidos</label>
                             <input
                                 id="collaboratorLastName"
@@ -180,7 +181,7 @@ export function InspectionForm({ inspection }: InspectionFormProps) {
                                 onChange={(e) => handleInputChange('collaborator.lastName', e.target.value)}
                             />
                         </div>
-                        <div>
+                        <div className={styles.form_field}>
                             <label htmlFor="collaboratorFirstName">Nombres</label>
                             <input
                                 id="collaboratorFirstName"
@@ -190,7 +191,7 @@ export function InspectionForm({ inspection }: InspectionFormProps) {
                             />
                         </div>
 
-                        <div>
+                        <div className={styles.form_field}>
                             <label htmlFor="collaboratorPhoneNumber">Telefono Celular</label>
                             <input
                                 id="collaboratorPhoneNumber"
@@ -199,7 +200,7 @@ export function InspectionForm({ inspection }: InspectionFormProps) {
                                 onChange={(e) => handleInputChange('collaborator.phoneNumber', e.target.value)}
                             />
                         </div>
-                        <div>
+                        <div className={styles.form_field}>
                             <label htmlFor="collaboratorEmail">Email</label>
                             <input
                                 id="collaboratorEmail"
@@ -208,9 +209,9 @@ export function InspectionForm({ inspection }: InspectionFormProps) {
                                 onChange={(e) => handleInputChange('collaborator.email', e.target.value)}
                             />
                         </div>
-                        <h2>Inspector</h2>
-                        <div>
-                            <label htmlFor="inspectorDocumentType">Tipo de documento Identidad</label>
+                        <h2 className={styles.form__subtitle}>Inspector</h2>
+                        <div className={styles.form_field}>
+                            <label htmlFor="inspectorDocumentType">Tipo de documento</label>
                             <input
                                 id="inspectorDocumentType"
                                 type="text"
@@ -218,8 +219,8 @@ export function InspectionForm({ inspection }: InspectionFormProps) {
                                 onChange={(e) => handleInputChange('inspector.documentType', e.target.value)}
                             />
                         </div>
-                        <div>
-                            <label htmlFor="inspectorDocumentNumber">Número Documento Identidad</label>
+                        <div className={styles.form_field}>
+                            <label htmlFor="inspectorDocumentNumber">Número Documento</label>
                             <input
                                 id="inspectorDocumentNumber"
                                 type="text"
@@ -227,7 +228,7 @@ export function InspectionForm({ inspection }: InspectionFormProps) {
                                 onChange={(e) => handleInputChange('inspector.documentNumber', e.target.value)}
                             />
                         </div>
-                        <div>
+                        <div className={styles.form_field}>
                             <label htmlFor="inspectorLastName">Apellidos</label>
                             <input
                                 id="inspectorLastName"
@@ -236,7 +237,7 @@ export function InspectionForm({ inspection }: InspectionFormProps) {
                                 onChange={(e) => handleInputChange('inspector.lastName', e.target.value)}
                             />
                         </div>
-                        <div>
+                        <div className={styles.form_field}>
                             <label htmlFor="inspectorFirstName">Nombres</label>
                             <input
                                 id="inspectorFirstName"
@@ -246,7 +247,7 @@ export function InspectionForm({ inspection }: InspectionFormProps) {
                             />
                         </div>
 
-                        <div>
+                        <div className={styles.form_field}>
                             <label htmlFor="inspectorPhoneNumber">Telefono Celular</label>
                             <input
                                 id="inspectorPhoneNumber"
@@ -255,7 +256,7 @@ export function InspectionForm({ inspection }: InspectionFormProps) {
                                 onChange={(e) => handleInputChange('inspector.phoneNumber', e.target.value)}
                             />
                         </div>
-                        <div>
+                        <div className={styles.form_field}>
                             <label htmlFor="inspectorEmail">Email</label>
                             <input
                                 id="inspectorEmail"
@@ -265,8 +266,8 @@ export function InspectionForm({ inspection }: InspectionFormProps) {
                             />
                         </div>
 
-                        <h2>Otras preguntas</h2>
-                        <div>
+                        <h2 className={styles.form__subtitle}>Información</h2>
+                        <div className={styles.form_field}>
                             <label htmlFor="country">País</label>
                             <input
                                 id="country"
@@ -275,7 +276,7 @@ export function InspectionForm({ inspection }: InspectionFormProps) {
                                 onChange={(e) => handleInputChange('country', e.target.value)}
                             />
                         </div>
-                        <div>
+                        <div className={styles.form_field}>
                             <label htmlFor="address">Dirección</label>
                             <input
                                 id="address"
@@ -284,7 +285,7 @@ export function InspectionForm({ inspection }: InspectionFormProps) {
                                 onChange={(e) => handleInputChange('address', e.target.value)}
                             />
                         </div>
-                        <div>
+                        <div className={styles.form_field}>
                             <label htmlFor="client">Cliente</label>
                             <input
                                 id="client"
@@ -293,7 +294,7 @@ export function InspectionForm({ inspection }: InspectionFormProps) {
                                 onChange={(e) => handleInputChange('client', e.target.value)}
                             />
                         </div>
-                        <div>
+                        <div className={styles.form_field}>
                             <label htmlFor="work">Obra</label>
                             <input
                                 id="work"
@@ -302,7 +303,7 @@ export function InspectionForm({ inspection }: InspectionFormProps) {
                                 onChange={(e) => handleInputChange('work', e.target.value)}
                             />
                         </div>
-                        <div>
+                        <div className={styles.form_field}>
                             <label htmlFor="date">Fecha</label>
                             <input
                                 id="date"
@@ -312,7 +313,7 @@ export function InspectionForm({ inspection }: InspectionFormProps) {
                             />
                         </div>
 
-                        <h2>Items</h2>
+                        <h2 className={styles.form__subtitle}>Preguntas</h2>
                         {formData.items.map((item) => (
                             <div key={item.id}>
                                 <p>{item.question}</p>

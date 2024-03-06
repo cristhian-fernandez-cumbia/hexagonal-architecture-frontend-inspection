@@ -1,0 +1,64 @@
+.container {
+    padding-left: var(--body-padding-left);
+    padding-right: var(--body-padding-right);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.header__title {
+    margin: 0;
+    color: var(--first-color-hover);
+}
+
+.header__button {
+    background-color: var(--first-color);
+    border-color: var(--first-color);
+    color: var(--white-color);
+}
+
+.header__button:hover {
+    background-color: var(--first-color-hover);
+    border-color: var(--first-color-hover);
+}
+
+.inspectionCard {
+    border: 1px solid var(--grey-300);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+}
+
+.inspectionCard__description {
+    display: flex;
+    align-items: center;
+}
+.inspectionCard__description span{
+    margin-right: 10px;
+}
+
+.button__update{
+    background-color: var(--second-color);
+    border-color: var(--second-color);
+    color: var(--white-color);
+    margin-right: 15px;
+}
+.button__delete{
+    background-color: var(--third-color);
+    border-color: var(--third-color);
+    color: var(--white-color);
+}
+.button__update:hover{
+    background-color: var(--second-color-hover);
+    border-color: var(--second-color-hover);
+}
+.button__delete:hover{
+    background-color: var(--third-color-hover);
+    border-color: var(--third-color-hover);
+}

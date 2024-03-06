@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "../../components/button/Button";
 import { Inspection } from "../../modules/inspection/domain/Inspection";
-import styles from "./../../styles/inspectionCard.module.css";
+import styles from "./../../styles/inspection.module.css";
 import { useInspectionsContext } from "./InspectionsContext";
 import Modal from "../../components/modal/Modal";
 import InspectionDelete from "./InspectionDelete";
@@ -11,11 +11,7 @@ const InspectionCard = ({ inspection }: { inspection: Inspection }) => {
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
     const { deleteInspection } = useInspectionsContext();
-    const handleShowInspection = (id: string) => {
-        console.log('id', id)
-    }
-    const handleUpdateInspection = (id: string) => {
-        console.log('id', id)
+    const handleUpdateInspection = () => {
         setIsUpdateModalOpen(true)
     }
     const handleDeleteInspection = () => {
@@ -36,18 +32,17 @@ const InspectionCard = ({ inspection }: { inspection: Inspection }) => {
         <div className={styles.inspectionCard}>
             <div>
                 <div className={styles.inspectionCard__description}>
-                    <span>Inspector</span>
-                    <h3>{inspection.inspector.firstName} {inspection.inspector.lastName}</h3>
+                    <span>Inspector:</span>
+                    <h4>{inspection.inspector.firstName} {inspection.inspector.lastName}</h4>
                 </div>
                 <div className={styles.inspectionCard__description}>
-                    <span>Resultado</span>
-                    <h3>{inspection.result}</h3>
+                    <span>Resultado:</span>
+                    <h4>{inspection.result}</h4>
                 </div>
             </div>
             <div>
-                <Button onClick={()=> handleShowInspection(inspection.id)}>Ver</Button>
-                <Button onClick={()=> handleUpdateInspection(inspection.id)}>Editar</Button>
-                <Button onClick={()=> handleDeleteInspection()}>Eliminar</Button>
+                <Button onClick={handleUpdateInspection} className={styles.button__update}>Editar</Button>
+                <Button onClick={handleDeleteInspection} className={styles.button__delete}>Eliminar</Button>
             </div>
             {isDeleteModalOpen && (
                 <Modal isOpen={isDeleteModalOpen} onClose={handleCloseModal}>

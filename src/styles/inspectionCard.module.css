@@ -1,9 +1,0 @@
-.inspectionCard{
-    border: 1px solid red;
-    display: flex;
-    justify-content: space-between;
-}
-
-.inspectionCard__description{
-    display: flex;
-}

@@ -1,10 +1,9 @@
-import styles from "./../../styles/inspectionCard.module.css";
+import styles from "./../../styles/inspection.module.css";
 import InspectionCard from "./InspectionCard";
 import { useInspectionsContext } from "./InspectionsContext";
 
 const InspeccionList = () => {
     const { inspections } = useInspectionsContext();
-    console.log('inspections:::', inspections)
 
   return (
     <section>

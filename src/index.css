@@ -50,7 +50,7 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} 
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -73,10 +73,6 @@ button:focus-visible {
 @font-face {
   font-family: 'Lato-Regular';
   src: url('./assets/fonts/Lato-Regular.woff') format('woff');
-}
-@font-face {
-  font-family: 'Satisfy-Regular';
-  src: url('./assets/fonts/Satisfy-Regular.woff') format('woff');
 }
 
 html {
@@ -102,15 +98,15 @@ html {
   
   --first-color: #2fb3b1;
   --first-color-hover: #1d8583;
-  --first-color-light: #58ebe8;
+  --first-color-light: rgb(148, 245, 243);
   --first-color-dark: #1b6665;
   
-  --second-color: #8279b3;
-  --second-color-hover: #625a8f;
-  --second-color-light: #a79ddf;
-  --second-color-dark: #514a7e;
+  --second-color: #f0663c;
+  --second-color-hover: #be3d16;
+  --second-color-light: #ee6940;
+  --second-color-dark: #943215;
   
-  --third-color: #eb5656;
+  --third-color: #e24747;
   --third-color-hover: #c03939;
   --third-color-light: #ef7676;
   --third-color-dark: #d84646;
@@ -157,7 +153,7 @@ html {
   --text-color: var(--grey-700);
   --border-color: var(--first-color);
 
-  --heading-font: "Satisfy-Regular", sans-serif;
+  --heading-font: "Lato-Bold", sans-serif;
   --title-font: "Lato-Bold", sans-serif;
   --body-font: "Lato-Regular", sans-serif;
   --icon-theme-color : var(--fourth-color);
@@ -308,9 +304,5 @@ code {
 input {
   box-sizing: border-box; 
   max-width: 100%;
-}
-
-.CircularProgressbar{
-  width: 50px;
 }
 

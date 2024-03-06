@@ -1,30 +1,52 @@
-# React + TypeScript + Vite
+# Proyecto de Inspección
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto utiliza la arquitectura hexagonal DDD (Domain Driven Design) y está desarrollado con ReactJS y TypeScript, utilizando Vite como herramienta de construcción. Se enfoca en la gestión de inspecciones, proporcionando una interfaz de usuario intuitiva y un diseño centrado en el usuario. Además, se han implementado pruebas unitarias para garantizar la calidad del código.
 
-Currently, two official plugins are available:
+## Estructura del Proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+El proyecto sigue una estructura organizada que facilita la comprensión y mantenimiento del código. A continuación, se presenta una vista general de la estructura de archivos y carpetas:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```plaintext
+- assets
+  - fonts
+  - images
+- components
+  - button
+  - footer
+  - header
+  - modal
+- hooks
+- modules
+  - inspection
+    - application
+    - domain
+    - infrastructure
+- sections
+  - Home
+    - Home.tsx
+  - Inspection
+    - InspectionList.tsx
+    - Inspection.tsx
+    - InspectionCard.tsx
+    - InspectionDelete.tsx
+    - InspectionForm.tsx
+    - InspectionsContext.tsx
+    - useInspectionForm.ts
+    - useInspectionFormData.ts
+- styles
+  - home.module.css
+  - inspection.module.css
+  - inspectionForm.module.css
+  - modal.module.css
+- App.css
+- App.tsx
+- index.css
+- main.tsx
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Ejecución del Proyecto
+Para ejecutar el proyecto localmente, siga estos pasos:
+
+1. Ejecute npm install para instalar todas las dependencias necesarias.
+2. Ejecute npm run dev para iniciar el servidor de desarrollo.
+3. Abra su navegador y navegue a la URL proporcionada para ver la aplicación en funcionamiento.

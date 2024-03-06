@@ -19,8 +19,19 @@ El proyecto sigue una estructura organizada que facilita la comprensión y mante
 - modules
   - inspection
     - application
+      - createInspection.ts
+			- deleteInspection.ts
+			- getAllInspections.ts
+			- getInspectionById.ts
+			- updateInspection.ts
     - domain
+      - Collaborator.ts
+			- Inspection.ts
+			- InspectionItem.ts
+			- InspectionRepository.ts
+			- Inspector.ts
     - infrastructure
+      - LocalStorageRepository.ts
 - sections
   - Home
     - Home.tsx
@@ -47,6 +58,6 @@ El proyecto sigue una estructura organizada que facilita la comprensión y mante
 ## Ejecución del Proyecto
 Para ejecutar el proyecto localmente, siga estos pasos:
 
-1. Ejecute npm install para instalar todas las dependencias necesarias.
-2. Ejecute npm run dev para iniciar el servidor de desarrollo.
+1. Ejecute `npm install` para instalar todas las dependencias necesarias.
+2. Ejecute `npm run dev` para iniciar el servidor de desarrollo.
 3. Abra su navegador y navegue a la URL proporcionada para ver la aplicación en funcionamiento.

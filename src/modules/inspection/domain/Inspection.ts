@@ -5,11 +5,12 @@ import { InspectionItem } from "./InspectionItem";
 export interface Inspection {
     id: string;
     inspector: Inspector;
-    collaborators: Collaborator;
+    collaborator: Collaborator;
     country: string;
     address: string;
     client: string;
     work: string;
     date: string;
     items: InspectionItem[];
+    result: string;
 }

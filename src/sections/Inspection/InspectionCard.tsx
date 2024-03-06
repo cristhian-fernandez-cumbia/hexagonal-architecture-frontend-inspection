@@ -11,6 +11,8 @@ const InspectionCard = ({ inspection }: { inspection: Inspection }) => {
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
     const { deleteInspection } = useInspectionsContext();
+    const resultColor = inspection.result === 'OBSERVADO' ? styles.observed : styles.correct;
+
     const handleUpdateInspection = () => {
         setIsUpdateModalOpen(true)
     }
@@ -29,7 +31,7 @@ const InspectionCard = ({ inspection }: { inspection: Inspection }) => {
     };
 
     return (
-        <div className={styles.inspectionCard}>
+        <div className={`${styles.inspectionCard} ${resultColor}`}>
             <div>
                 <div className={styles.inspectionCard__description}>
                     <span>Inspector:</span>
@@ -37,7 +39,7 @@ const InspectionCard = ({ inspection }: { inspection: Inspection }) => {
                 </div>
                 <div className={styles.inspectionCard__description}>
                     <span>Resultado:</span>
-                    <h4>{inspection.result}</h4>
+                    <h4 className={styles.inspectionCard__result}>{inspection.result}</h4>
                 </div>
             </div>
             <div>

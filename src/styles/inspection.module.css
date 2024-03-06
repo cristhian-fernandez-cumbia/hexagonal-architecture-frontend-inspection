@@ -33,6 +33,7 @@
     justify-content: space-between;
     padding: 10px 15px;
     border-radius: var(--border-radius);
+    margin-bottom: 10px;
 }
 
 .inspectionCard__description {
@@ -61,4 +62,8 @@
 .button__delete:hover{
     background-color: var(--third-color-hover);
     border-color: var(--third-color-hover);
+}
+
+.observed .inspectionCard__result{
+    color: var(--third-color);
 }

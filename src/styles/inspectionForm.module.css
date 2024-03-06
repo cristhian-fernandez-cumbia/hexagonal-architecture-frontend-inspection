@@ -97,8 +97,88 @@
     color: var(--blue-400);
     text-align: left;
 }
-@media only screen and (min-width: 650px) {
-    .form {
-        width: 300px;
+.form__item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 12px;
+    padding: 5px;
+    padding-left: 10px;
+    background-color: var(--grey-200);
+    border-radius: var(--border-radius);
+}
+
+.firstAnswer{
+    margin-right: 6px;
+}
+
+.form__item button{
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--first-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form__result{
+    margin-top: 20px;
+}
+
+.form__button{
+    margin-bottom: 15px;
+    background-color: var(--blue-500);
+    border-color: var(--blue-500);
+    color: var(--white-color);
+}
+
+.form__button:hover{
+    background-color: var(--blue-700);
+    border-color: var(--blue-700);
+}
+
+.message {
+    margin-bottom: 20px;
+}
+
+.message h2{
+    margin-top: 20px;
+    font-size: 20px;
+}
+.message h3{
+    margin-top: 12px;
+    color: var(--blue-500);
+}
+
+.message__delete{
+    margin-top: 28px;
+}
+
+.message__delete p{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.button__delete{
+    background-color: var(--third-color);
+    border-color: var(--third-color);
+    width: 100%;
+    margin-bottom: 10px;
+    color: var(--white-color);
+}
+
+.button__delete:hover{
+    background-color: var(--third-color-hover);
+    border-color: var(--third-color-hover);
+}
+
+@media only screen and (min-width: 950px) {
+    .form__container{
+        display: flex;
+    }
+    .form__container > .form__seccion:first-child {
+        margin-right: 20px;
     }
 }

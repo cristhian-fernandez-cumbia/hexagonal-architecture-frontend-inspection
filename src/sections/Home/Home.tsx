@@ -9,7 +9,7 @@ const Home = () => {
       <img className={styles.bannerImage} src={bannerImage} alt="Banner Inspección" />
       <div className={styles.overlay}>
         <h1>Prueba técnica</h1>
-        <button >Ver lista de pruebas</button>
+        <h2 >Inspección de trabajo</h2>
       </div>
     </picture>
     <div className={styles.bottomSection}>
